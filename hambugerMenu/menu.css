@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background: #d44000;
+    position: relative;
+}
+.container {
+    background: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    cursor: pointer;
+}
+.sp {
+    width: 90%;
+    height: 4px;
+    border-radius: 2px;
+    background: #d44000;
+    /* padding: 5px 15px; */
+    visibility: 1;
+    transform: scale(1);
+    transition: .5s;
+}
+.sp.two {
+    width: 70%;
+}
+nav {
+    background: white;
+    width: fit-content;
+    text-align: center;
+    border-radius: 7px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    opacity: 0;
+    transition: .7s;
+}
+nav::before {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 15px;
+}
+nav li {
+    padding: 15px 80px;
+    cursor: pointer;
+    position: relative;
+    transition: .5s;
+}
+nav li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 0%;
+    height: 4px;
+    background: #000;
+    z-index: -5;
+    margin: auto;
+    border-radius: 2px;
+    transition: .5s;
+}
+nav li:hover::before {
+    width: 100%;
+}
+nav.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.container.active {
+    display:  block;
+}
+.container.active {
+    position: relative;
+}
+.container.active .sp.two {
+    width: 0;
+}
+.container.active .sp.one {
+    width: 90%;
+    margin-top: 15px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.container.active .sp.three {
+    width: 90%;
+    margin-bottom: -15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

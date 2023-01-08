@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins';
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(20, 20, 106);
+}
+.container {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 7px;
+    background: linear-gradient();
+    position: relative;
+    /* background: rgb(192,0,255);
+    background: linear-gradient(
+        30deg, 
+        rgba(192,0,255,1) 3%, 
+        rgb(212, 162, 0) 55%,  
+        rgb(225, 255, 0) 100%); */
+    background: url('./instagram.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 150px;
+    height: 150px;
+    transform: rotate(45deg);
+    bottom: -125px;
+    right: -130px;
+    cursor: pointer;
+    transition: .5s;
+}
+.container:hover::before {
+    bottom: -90px;
+    right: -80px;
+}
+p {
+    /* transform: translate(-50%, -50%); */
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-top: 25px;
+}
+span {
+    position: absolute;
+    right: -27px;
+    bottom: -27px;
+    opacity: 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .5s;
+}
+.container:hover span {
+    right: 15px;
+    bottom: 10px;
+    opacity: 1;
+}

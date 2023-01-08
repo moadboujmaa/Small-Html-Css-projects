@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background: brown;
+    position: relative;
+}
+button {
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 25px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+.toggle {
+    width: 50px;
+    height: 50px;
+    background: rgb(28, 28, 147);
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: 1s;
+    cursor: pointer;
+}
+.bg {
+    background: url('./moon.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+    width: 70%;
+    height: 70%;
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 1s;
+}
+/* -------  ------- */
+.toggle.active {
+    left: 65%;
+    background: rgb(255, 89, 12);
+    transform: rotate(360deg);
+}
+.toggle.active .bg {
+    background: url('./sun.png');
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-position: center;
+}
